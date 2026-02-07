@@ -1,0 +1,70 @@
+{
+    "name": "gembapay/gembapay-php",
+    "description": "GembaPay PHP SDK — Unified payment gateway for crypto (ETH, BNB, POL, USDC, USDT), Stripe, and PayPal. Non-custodial cryptocurrency payments via smart contracts with fiat checkout.",
+    "type": "library",
+    "license": "MIT",
+    "keywords": [
+        "payments",
+        "payment-gateway",
+        "crypto",
+        "crypto-payments",
+        "cryptocurrency",
+        "ethereum",
+        "bnb",
+        "polygon",
+        "usdc",
+        "usdt",
+        "stripe",
+        "paypal",
+        "fiat-payments",
+        "non-custodial",
+        "web3",
+        "blockchain",
+        "smart-contract",
+        "checkout",
+        "ecommerce",
+        "gateway",
+        "protocol",
+        "merchant",
+        "accept-crypto",
+        "accept-payments",
+        "laravel",
+        "php-sdk",
+        "payment-processing",
+        "multi-chain",
+        "defi"
+    ],
+    "homepage": "https://gembapay.com",
+    "authors": [
+        {
+            "name": "GEMBA EOOD",
+            "email": "contacts@gembapay.com",
+            "homepage": "https://gembapay.com"
+        }
+    ],
+    "support": {
+        "email": "contacts@gembapay.com",
+        "issues": "https://github.com/ivanovslavy/gembapay/issues",
+        "source": "https://github.com/ivanovslavy/gembapay",
+        "docs": "https://docs.gembapay.com"
+    },
+    "require": {
+        "php": ">=7.4",
+        "ext-curl": "*",
+        "ext-json": "*"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "GembaPay\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "GembaPay\\Tests\\": "tests/"
+        }
+    },
+    "minimum-stability": "stable"
+}
