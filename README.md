@@ -170,7 +170,7 @@ $gembapay = new GembaPay(apiKey: 'gembapay_test_your_key');
 var_dump($gembapay->isTestMode()); // true
 ```
 
-Claim free test tokens at [Developer Resources](https://merchant.gembapay.com/developer-resources).
+Claim free test tokens at [Developer Resources](https://gembapay.com/developers).
 
 ## API Reference
 
@@ -214,9 +214,9 @@ new GembaPay(
 
 ## Links
 
-- [Documentation](https://docs.gembapay.com)
-- [Merchant Dashboard](https://merchant.gembapay.com)
-- [Integration Guide](https://docs.gembapay.com/integration)
+- [Documentation](https://gembapay.com/docs)
+- [Merchant Dashboard](https://merchant-dashboard.gembapay.com)
+- [Integration Guide](https://gembapay.com/integration)
 - [GitHub](https://github.com/ivanovslavy/gembapay)
 - [npm Package](https://www.npmjs.com/package/gembapay)
 

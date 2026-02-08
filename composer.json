@@ -1,6 +1,6 @@
 {
     "name": "gembapay/gembapay-php",
-    "description": "GembaPay PHP SDK — Unified payment gateway for crypto (ETH, BNB, POL, USDC, USDT), Stripe, and PayPal. Non-custodial cryptocurrency payments via smart contracts with fiat checkout.",
+    "description": "GembaPay PHP SDK — Unified payment gateway for crypto (ETH, BNB, POL, USDC, USDT), Stripe, and PayPal. Non-custodial payments.",
     "type": "library",
     "license": "MIT",
     "keywords": [
@@ -46,7 +46,7 @@
         "email": "contacts@gembapay.com",
         "issues": "https://github.com/ivanovslavy/gembapay/issues",
         "source": "https://github.com/ivanovslavy/gembapay",
-        "docs": "https://docs.gembapay.com"
+        "docs": "https://gembapay.com/docs"
     },
     "require": {
         "php": ">=7.4",
