@@ -5,7 +5,7 @@ namespace GembaPay;
 class GembaPay
 {
     private const BASE_URL = 'https://api.gembapay.com';
-    private const VERSION = '1.0.0';
+    private const VERSION = '1.0.1';
 
     private string $apiKey;
     private ?string $webhookSecret;
@@ -126,7 +126,8 @@ class GembaPay
             throw new GembaPayException('webhookSecret is required for signature verification');
         }
 
-        $expected = 'sha256=' . hash_hmac('sha256', $payload, $this->webhookSecret);
+        // GembaPay signs webhooks as BARE hex HMAC-SHA256 (no "sha256=" prefix) over the raw body.
+        $expected = hash_hmac('sha256', $payload, $this->webhookSecret);
 
         return hash_equals($expected, $signature);
     }
