@@ -1,8 +1,8 @@
 # GembaPay PHP SDK
 
-**Unified payment gateway for crypto, cards, and PayPal.**
+**Unified payment gateway for cards and PayPal.**
 
-Accept ETH, BNB, POL, USDC, USDT, credit cards (via Stripe), and PayPal through a single API. Non-custodial crypto payments — funds go directly to your wallet via smart contracts.
+Accept credit cards (via Stripe) and PayPal through a single API. Funds settle directly into the merchant's own connected account — GembaPay never holds your money.
 
 [![Packagist](https://img.shields.io/packagist/v/gembapay/gembapay-php)](https://packagist.org/packages/gembapay/gembapay-php)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
@@ -12,11 +12,10 @@ Accept ETH, BNB, POL, USDC, USDT, credit cards (via Stripe), and PayPal through 
 
 ## Features
 
-- **One API, three payment methods** — Crypto, Stripe (cards/Apple Pay/Google Pay), PayPal
-- **Non-custodial crypto** — Payments route directly to your wallet via smart contracts
-- **86+ currencies** — Price in any fiat currency, settle in crypto or fiat
-- **Multi-chain** — Ethereum, BNB Smart Chain, Polygon
-- **Test mode built-in** — Testnets + sandbox environments for development
+- **One API, two payment methods** — Stripe (cards/Apple Pay/Google Pay) and PayPal
+- **Direct settlement** — Payments route straight into your own Stripe or PayPal account
+- **51+ currencies** — Price in any supported currency
+- **Test mode built-in** — Stripe and PayPal sandbox environments for development
 - **Zero dependencies** — Uses only PHP built-in curl and json extensions
 - **Laravel & WordPress compatible** — Works with any PHP framework
 
@@ -47,7 +46,7 @@ echo $payment['paymentUrl'];
 // → https://payment.gembapay.com/checkout/ORDER-123
 
 echo implode(', ', $payment['allowedMethods']);
-// → crypto, stripe, paypal
+// → stripe, paypal
 ```
 
 ## Usage
@@ -73,7 +72,7 @@ exit;
 $status = $gembapay->getPaymentStatus('ORDER-456');
 
 echo $status['status'];   // 'completed'
-echo $status['network'];  // 'bsc', 'stripe', 'paypal', etc.
+echo $status['network'];  // 'stripe' or 'paypal'
 ```
 
 ### Webhook Handling
@@ -161,7 +160,6 @@ Use test API keys (`gembapay_test_...`) for development. Test mode automatically
 
 | Method | Test Environment |
 |--------|-----------------|
-| Crypto | Sepolia, BSC Testnet, Polygon Amoy |
 | Stripe | Test cards (`4242 4242 4242 4242`) |
 | PayPal | Sandbox accounts |
 
@@ -169,8 +167,6 @@ Use test API keys (`gembapay_test_...`) for development. Test mode automatically
 $gembapay = new GembaPay(apiKey: 'gembapay_test_your_key');
 var_dump($gembapay->isTestMode()); // true
 ```
-
-Claim free test tokens at [Developer Resources](https://gembapay.com/developers).
 
 ## API Reference
 
@@ -202,7 +198,6 @@ new GembaPay(
 
 | Method | Fee |
 |--------|-----|
-| Crypto (ETH, BNB, POL, USDC, USDT) | 1% |
 | Stripe (Cards, Apple Pay, Google Pay) | 1% + €0.20 + Stripe fees |
 | PayPal (Balance, Bank, Pay Later) | 1% + €0.20 + PayPal fees |
 

@@ -5,7 +5,7 @@ namespace GembaPay;
 class GembaPay
 {
     private const BASE_URL = 'https://api.gembapay.com';
-    private const VERSION = '1.0.1';
+    private const VERSION = '1.0.2';
 
     private string $apiKey;
     private ?string $webhookSecret;
